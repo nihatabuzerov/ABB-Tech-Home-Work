@@ -1,39 +1,43 @@
+import java.util.Objects;
+
 public class Customer {
-    String name;
-    int id;
-    String lisaenceNumber;
+    private int id;
+    private String name;
+    private String licenseNumber;
+
+    public Customer(int id, String name, String licenseNumber) {
+        this.id = id;
+        this.name = name;
+        this.licenseNumber = licenseNumber;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLicenseNumber() {
+        return licenseNumber;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Customer customer = (Customer) o;
-        return id == customer.id;
+        if (!(o instanceof Customer)) return false;
+        Customer that = (Customer) o;
+        return id == that.id;
     }
+
     @Override
     public int hashCode() {
-        return Integer.hashCode(id);
+        return Objects.hash(id);
     }
+
     @Override
     public String toString() {
-        return "Customer{" +
-                "Name='" + name + '\'' +
-                ", id=" + id +
-                ", lisaenceNumber=" + lisaenceNumber +
-                '}';
-    }
-    public Customer(int id, String name, String lisaenceNumber) {
-        this.name = name;
-        this.id = id;
-        this.lisaenceNumber = lisaenceNumber;
+        return name + " (" + licenseNumber + ")";
     }
 }
