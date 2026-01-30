@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ff14d6cb-c296-4fb5-9b71-860527d21c02" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../lesson-12/src/ObservePattern/NewsPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson-12/src/ObservePattern/NewsPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/abb-tech/Bicycle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/abb-tech/Taxi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/abb-tech/Transport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/abb-tech/TransportType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-10/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-10/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-10/UserBackupService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-9/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-9/BorrowRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-9/LibraryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-9/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/lesson-9/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/AnonymousPractice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/CollectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/Outher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/TestClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/test.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nihatabuzerov&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nihatabuzerov/ABB-Tech-Home-Work.git&quot;,
+    &quot;accountId&quot;: &quot;855dced0-fbed-4279-929b-de714d76a54b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="35yohjnvJSV9mb2DV8mBzT2H1zX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.gradleTest [:org.example.Main.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "onboarding.tips.debug.path": "/Users/apple/Desktop/abb-tech/gradleTest/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff14d6cb-c296-4fb5-9b71-860527d21c02" name="Changes" comment="" />
+      <created>1764091796457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764091796457</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

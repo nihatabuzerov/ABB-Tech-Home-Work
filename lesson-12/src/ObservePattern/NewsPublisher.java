@@ -14,7 +14,7 @@ public class NewsPublisher {
     public synchronized void publishNews(String news) {
         this.news = news;
         System.out.println("Publisher: Yeni xəbər yayımlandı -> " + news);
-        notifyAll(); // Subscriber-ləri oyadır
+        notifyAll();
     }
 
     public synchronized void waitForNews(Subscriber subscriber) {
@@ -26,6 +26,6 @@ public class NewsPublisher {
             }
         }
         subscriber.update(news);
-        news = null; // Sonrakı xəbər üçün reset
+        news = null;
     }
 }
