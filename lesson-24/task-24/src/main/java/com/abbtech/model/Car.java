@@ -1,0 +1,37 @@
+package com.abbtech.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "car")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Car {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    
+    @Column(nullable = false, length = 20)
+    private String vin;
+
+    @Column(name = "registration_number", nullable = false, length = 10)
+    private String registrationNumber;
+
+    @Column(name = "mileage_km", nullable = false)
+    private Integer mileageKm;
+
+    @Column(name = "production_year")
+    private Integer productionYear;
+    
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "model_id", nullable = false)
+    private CarModel carModel;
+    
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
+    private CarDetails carDetails;
+}

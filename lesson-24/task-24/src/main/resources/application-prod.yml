@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+app:
+  env: production
+  debug-mode: false
+
+logging:
+  level:
+    com.abbtech: WARN

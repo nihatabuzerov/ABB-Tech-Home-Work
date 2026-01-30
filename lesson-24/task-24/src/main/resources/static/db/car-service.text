@@ -1,0 +1,123 @@
+Car Service Database Specification
+1. Brand +
+
+Stores vehicle manufacturers.
+
+Field	Description
+brand_id	Unique ID for the car carBrand
+name	Brand name (e.g., Toyota, BMW)
+country (optional)	Country where carBrand originates
+founded_year (optional)	Year the carBrand was established
+
+Relation: One Brand → Many Models
+
+2. Model +
+
+Represents specific car carModels a carBrand produces.
+
+Field	Description
+model_id	Unique carModel identifier
+brand_id	Links to Brand
+name	Model name (e.g., Corolla, Mustang)
+category	Sedan, SUV, Truck, etc.
+year_from	First production year
+year_to	Last production year (null if still in production)
+
+Relation: One Model → Many Cars
+
+3. Car +
+
+Individual vehicle records.
+
+Field	Description
+car_id	Unique car ID
+model_id	The carModel this car belongs to
+vin	Vehicle Identification Number (unique globally)
+production_year	Year the car was manufactured
+registration_number	License plate number
+mileage_km	Current odometer reading in kilometers
+base_car_id	Links to another Car for modifications/towed-from chain (self-referencing)
+
+Relations:
+
+One Car → Many ServiceVisits
+
+One Car → One CarDetails
+
+One Car can derive from another Car (self-reference)
+
+4. CarDetails
+
+Extra non-core details for each car (One-to-One with Car).
+
+Field	Description
+car_id	Same ID as in Car table
+color	Exterior color
+engine_number	Engine serial number
+insurance_number	Insurance policy ID
+registration_code	Document registration code
+fuel_type	Petrol, Diesel, Hybrid, Electric
+engine_capacity	Engine size (e.g., 1.8L)
+5. ServiceVisit
+
+Each time a car comes for service.
+
+Field	Description
+service_id	Unique service visit number
+car_id	Which car was serviced
+service_date	Date of the visit
+odometer_km	KM reading at time of service
+service_type	Maintenance, repair, inspection, etc.
+notes	Free-form service notes
+
+Relation: One Car → Many ServiceVisits
+
+6. Part
+
+Spare parts used during servicing.
+
+Field	Description
+part_id	Unique part identifier
+name	Part name (e.g., Oil Filter)
+part_code	Manufacturer or internal code
+description	Details about the part
+unit_price	Cost per unit of the part
+carBrand	Part manufacturer (optional)
+
+
+7. Service_Part (Many-to-Many join table between ServiceVisit and Part)
+Field	Description
+service_id	Which service visit used the part
+part_id	Which part was used
+quantity	Number of units used in this service
+
+Relation:
+One ServiceVisit ↔ Many Parts
+One Part ↔ Many ServiceVisits
+
+8. Feature
+
+Optional features that cars can have.
+
+Field	Description
+feature_id	Unique ID of the feature
+name	Feature name (e.g., Sunroof, GPS, Cruise Control)
+description	Feature explanation/details
+category	Interior, Exterior, Safety, Tech
+
+
+9. Car_Feature (Many-to-Many join table between Car and Feature)
+Field	Description
+car_id	Which car has this feature
+feature_id	Which feature is installed
+
+Relation:
+One Car ↔ Many Features
+One Feature ↔ Many Cars
+
+🧾 Relationship Summary
+Relationship Type	Example in System
+One-to-Many	Brand → Model, Model → Car, Car → ServiceVisit
+One-to-One	Car → CarDetails
+Many-to-Many	Car ↔ Feature, ServiceVisit ↔ Part
+Self-referencing	Car → Car (base_car_id)

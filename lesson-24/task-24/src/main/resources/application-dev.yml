@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+app:
+  env: development
+  debug-mode: true
+
+logging:
+  level:
+    com.abbtech: DEBUG

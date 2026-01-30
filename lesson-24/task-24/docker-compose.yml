@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17
+
+    container_name: car-service-db
+
+    environment:
+      POSTGRES_DB: car
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - ./src/main/resources/static/db/car-service-db.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
