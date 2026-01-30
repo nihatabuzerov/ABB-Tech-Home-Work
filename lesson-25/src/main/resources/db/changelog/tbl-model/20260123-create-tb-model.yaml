@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-tbl-model
-      author: Ali Ramazanov
+      author: Nihat Abuzerov
       changes:
         - createTable:
             tableName: model

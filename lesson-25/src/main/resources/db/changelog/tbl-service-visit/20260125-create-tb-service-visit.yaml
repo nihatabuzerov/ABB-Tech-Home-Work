@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-tbl-service-visit
-      author: Ali Ramazanov
+      author: Nihat Abuzerov
       changes:
         - createTable:
             tableName: service_visit

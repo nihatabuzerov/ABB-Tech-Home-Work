@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-tbl-app-user
-      author: Ali Ramazanov
+      author: Nihat Abuzerov
       changes:
         - createTable:
             tableName: app_user

@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-tbl-car
-      author: Ali Ramazanov
+      author: Nihat Abuzerov
       changes:
         - createTable:
             tableName: car
