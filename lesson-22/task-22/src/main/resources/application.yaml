@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: task-22
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task22
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:database/schema.sql
+      data-locations: classpath:database/data.sql
