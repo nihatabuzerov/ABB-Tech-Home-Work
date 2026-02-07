@@ -2,7 +2,7 @@ package com.automotive.controller;
 
 import com.automotive.dto.FeatureDto;
 import com.automotive.dto.ReqFeatureDto;
-import com.automotive.service.FeatureService;
+import com.automotive.service.impl.FeatureService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

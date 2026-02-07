@@ -7,6 +7,7 @@ import com.automotive.model.Brand;
 import com.automotive.model.Model;
 import com.automotive.repository.BrandRepository;
 import com.automotive.repository.ModelRepository;
+import com.automotive.service.impl.ModelServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

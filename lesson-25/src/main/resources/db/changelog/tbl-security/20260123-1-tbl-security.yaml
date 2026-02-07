@@ -1,0 +1,278 @@
+databaseChangeLog:
+  - logicalFilePath: 20260123-1-tbl-security.yaml
+  - changeSet:
+      id: 1
+      author: Nihat Abuzerov
+      changes:
+        - createTable:
+            tableName: app_user
+            columns:
+
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: username
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+              - column:
+                  name: full_name
+                  type: VARCHAR(100)
+
+              - column:
+                  name: email
+                  type: VARCHAR(100)
+                  constraints:
+                    unique: true
+
+              - column:
+                  name: password_hash
+                  type: TEXT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: is_active
+                  type: BOOLEAN
+                  defaultValueBoolean: true
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+
+        - createTable:
+            tableName: role
+            columns:
+
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: name
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+              - column:
+                  name: description
+                  type: TEXT
+
+
+        - createTable:
+            tableName: permission
+            columns:
+
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: http_method
+                  type: VARCHAR(10)
+
+              - column:
+                  name: path_pattern
+                  type: VARCHAR(255)
+
+              - column:
+                  name: permission_code
+                  type: VARCHAR(100)
+
+
+        - createTable:
+            tableName: user_role
+            columns:
+
+              - column:
+                  name: user_id
+                  type: BIGINT
+
+              - column:
+                  name: role_id
+                  type: BIGINT
+
+
+        - addPrimaryKey:
+            tableName: user_role
+            columnNames: user_id, role_id
+
+
+        - createTable:
+            tableName: role_permission
+            columns:
+
+              - column:
+                  name: role_id
+                  type: BIGINT
+
+              - column:
+                  name: permission_id
+                  type: BIGINT
+
+
+        - addPrimaryKey:
+            tableName: role_permission
+            columnNames: role_id, permission_id
+
+
+        # Foreign Keys
+
+        - addForeignKeyConstraint:
+            constraintName: fk_user_role_user_id
+            baseTableName: user_role
+            baseColumnNames: user_id
+            referencedTableName: app_user
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            constraintName: fk_user_role_role_id
+            baseTableName: user_role
+            baseColumnNames: role_id
+            referencedTableName: role
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            constraintName: fk_role_permission_role_id
+            baseTableName: role_permission
+            baseColumnNames: role_id
+            referencedTableName: role
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            constraintName: fk_role_permission_permission_id
+            baseTableName: role_permission
+            baseColumnNames: permission_id
+            referencedTableName: permission
+            referencedColumnNames: id
+
+  - changeSet:
+      id: 2
+      author: javidanhatamov
+
+      changes:
+        - insert:
+            tableName: role
+            columns:
+              - column: { name: name, value: USER }
+              - column: { name: description, value: Default User }
+
+        - insert:
+            tableName: role
+            columns:
+              - column: { name: name, value: ADMIN }
+              - column: { name: description, value: Administrator }
+
+  - changeSet:
+      id: 3
+      author: javidanhatamov
+
+      changes:
+
+        # READ
+        - insert:
+            tableName: permission
+            columns:
+              - column: { name: http_method, value: GET }
+              - column: { name: path_pattern, value: "/api/**" }
+              - column: { name: permission_code, value: READ_PRIVILEGE }
+
+        # WRITE
+        - insert:
+            tableName: permission
+            columns:
+              - column: { name: http_method, value: POST }
+              - column: { name: path_pattern, value: "/api/**" }
+              - column: { name: permission_code, value: WRITE_PRIVILEGE }
+
+        # UPDATE
+        - insert:
+            tableName: permission
+            columns:
+              - column: { name: http_method, value: PUT }
+              - column: { name: path_pattern, value: "/api/**" }
+              - column: { name: permission_code, value: UPDATE_PRIVILEGE }
+
+        # DELETE
+        - insert:
+            tableName: permission
+            columns:
+              - column: { name: http_method, value: DELETE }
+              - column: { name: path_pattern, value: "/api/**" }
+              - column: { name: permission_code, value: DELETE_PRIVILEGE }
+
+  - changeSet:
+      id: 4
+      author: javidanhatamov
+
+      changes:
+
+        # USER → READ only
+        - insert:
+            tableName: role_permission
+            columns:
+              - column:
+                  name: role_id
+                  valueComputed: "(SELECT id FROM role WHERE name='USER')"
+              - column:
+                  name: permission_id
+                  valueComputed: "(SELECT id FROM permission WHERE permission_code='READ_PRIVILEGE')"
+
+
+        # ADMIN → ALL
+        - insert:
+            tableName: role_permission
+            columns:
+              - column:
+                  name: role_id
+                  valueComputed: "(SELECT id FROM role WHERE name='ADMIN')"
+              - column:
+                  name: permission_id
+                  valueComputed: "(SELECT id FROM permission WHERE permission_code='READ_PRIVILEGE')"
+
+        - insert:
+            tableName: role_permission
+            columns:
+              - column:
+                  name: role_id
+                  valueComputed: "(SELECT id FROM role WHERE name='ADMIN')"
+              - column:
+                  name: permission_id
+                  valueComputed: "(SELECT id FROM permission WHERE permission_code='WRITE_PRIVILEGE')"
+
+        - insert:
+            tableName: role_permission
+            columns:
+              - column:
+                  name: role_id
+                  valueComputed: "(SELECT id FROM role WHERE name='ADMIN')"
+              - column:
+                  name: permission_id
+                  valueComputed: "(SELECT id FROM permission WHERE permission_code='UPDATE_PRIVILEGE')"
+
+        - insert:
+            tableName: role_permission
+            columns:
+              - column:
+                  name: role_id
+                  valueComputed: "(SELECT id FROM role WHERE name='ADMIN')"
+              - column:
+                  name: permission_id
+                  valueComputed: "(SELECT id FROM permission WHERE permission_code='DELETE_PRIVILEGE')"
+

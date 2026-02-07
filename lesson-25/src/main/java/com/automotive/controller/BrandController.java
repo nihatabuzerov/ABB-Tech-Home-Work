@@ -2,7 +2,7 @@ package com.automotive.controller;
 
 import com.automotive.dto.ReqBrandDto;
 import com.automotive.dto.RespBrandDto;
-import com.automotive.service.BrandService;
+import com.automotive.service.impl.BrandService;
 import com.automotive.validation.BrandGroupA;
 import com.automotive.validation.BrandGroupB;
 import jakarta.validation.Valid;

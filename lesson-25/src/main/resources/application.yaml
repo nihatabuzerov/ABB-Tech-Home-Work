@@ -23,7 +23,7 @@ spring:
       hibernate:
         default_schema: ${SCHEMA}
     hibernate:
-      ddl-auto: validate   # create → validate, Liquibase ilə conflict verməsin
+      ddl-auto: none  # create → validate, Liquibase ilə conflict verməsin
     open-in-view: false
     show-sql: true
   liquibase:

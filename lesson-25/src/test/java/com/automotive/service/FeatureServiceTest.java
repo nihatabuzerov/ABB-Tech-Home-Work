@@ -5,6 +5,7 @@ import com.automotive.dto.ReqFeatureDto;
 import com.automotive.exception.CarException;
 import com.automotive.model.Feature;
 import com.automotive.repository.FeatureRepository;
+import com.automotive.service.impl.FeatureServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

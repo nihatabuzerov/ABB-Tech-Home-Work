@@ -1,4 +1,6 @@
 spring:
+
+
   datasource:
     url: jdbc:postgresql://localhost:5432/automotive_db
     driver-class-name: org.postgresql.Driver
@@ -14,7 +16,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate   # create → validate, Liquibase ilə conflict verməsin
+      ddl-auto: none
     properties:
       hibernate:
         default_schema: car_service
@@ -23,5 +25,10 @@ spring:
   liquibase:
     enabled: true
 
+
 course:
   name: ABB Tech Academy local
+jwt:
+    secret: MySuperSecretKeyMySuperSecretKey123456
+    access-exp: 3600000        # 1 saat (ms)
+    refresh-exp: 86400000

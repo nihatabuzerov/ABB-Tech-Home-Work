@@ -5,6 +5,7 @@ import com.automotive.dto.RespBrandDto;
 import com.automotive.exception.CarException;
 import com.automotive.model.Brand;
 import com.automotive.repository.BrandRepository;
+import com.automotive.service.impl.BrandServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

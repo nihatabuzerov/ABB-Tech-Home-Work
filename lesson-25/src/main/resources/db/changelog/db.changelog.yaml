@@ -20,12 +20,4 @@ databaseChangeLog:
   - includeAll:
       path: db/changelog/tbl-service-part
   - includeAll:
-      path: db/changelog/tbl-app-user
-  - includeAll:
-      path: db/changelog/tbl-role
-  - includeAll:
-      path: db/changelog/tbl-user-role
-  - includeAll:
-      path: db/changelog/tbl-permission
-  - includeAll:
-      path: db/changelog/tbl-role-permission
+      path: db/changelog/tbl-security
