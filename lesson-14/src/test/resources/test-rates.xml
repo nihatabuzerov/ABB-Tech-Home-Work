@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValCurs Date="05.12.2025" Name="AZN/USD" Description="Azərbaycan Respublikası Mərkəzi Bankı">
+    <ValType Type="Xarici valyutalar">
+        <Valute Code="USD">
+            <Nominal>1</Nominal>
+            <Name>1 ABŞ dolları</Name>
+            <Value>1.7000</Value>
+        </Valute>
+        <Valute Code="EUR">
+            <Nominal>1</Nominal>
+            <Name>1 Avro</Name>
+            <Value>1.7935</Value>
+        </Valute>
+        <Valute Code="RUB">
+            <Nominal>100</Nominal>
+            <Name>100 Rusiya rublu</Name>
+            <Value>1.6064</Value>
+        </Valute>
+        <Valute Code="TRY">
+            <Nominal>1</Nominal>
+            <Name>1 Türk lirəsi</Name>
+            <Value>0.0486</Value>
+        </Valute>
+        <Valute Code="GBP">
+            <Nominal>1</Nominal>
+            <Name>1 İngilis funt sterlinqi</Name>
+            <Value>2.1538</Value>
+        </Valute>
+        <Valute Code="JPY">
+            <Nominal>100</Nominal>
+            <Name>100 Yapon yeni</Name>
+            <Value>1.1273</Value>
+        </Valute>
+    </ValType>
+</ValCurs>
